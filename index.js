@@ -1,4 +1,4 @@
-module.exports = function(apis) {
+exports.config = function(apis) {
     if (!angular) return false;
     if (!apis) return false;
     if (typeof(apis) !== 'object') return false;
