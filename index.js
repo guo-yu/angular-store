@@ -1,4 +1,5 @@
 module.exports = function(apis) {
+    if (!angular) return false;
     if (!apis) return false;
     if (typeof(apis) !== 'object') return false;
     angular.module('store', ['ngResource']).factory('Store', function($resource) {
