@@ -1,0 +1,14 @@
+{
+  "name": "angular-store",
+  "repo": "turingou/angular-store",
+  "description": "a component module based on angular ngResource store",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {},
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}
