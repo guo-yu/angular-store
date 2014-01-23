@@ -1,3 +1,5 @@
+require('angular-resource');
+
 exports.config = function(apis) {
     if (!angular) return false;
     if (!apis) return false;
