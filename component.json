@@ -4,7 +4,9 @@
   "description": "a component module based on angular ngResource store",
   "version": "0.0.2",
   "keywords": [],
-  "dependencies": {},
+  "dependencies": {
+      "components/angular-resource": "1.2.0"
+  },
   "development": {},
   "license": "MIT",
   "main": "index.js",
