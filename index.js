@@ -1,8 +1,9 @@
-exports.config = function(apis) {
+exports.config = function(apis, angular, ngResource) {
     if (!angular) return false;
+    if (!ngResource) return false;
     if (!apis) return false;
     if (typeof(apis) !== 'object') return false;
-    angular.module('store', ['ngResource']).factory('Store', function($resource) {
+    angular.module('store', [ngResource]).factory('Store', function($resource) {
         var router = {}
         Object.keys(apis).forEach(function(item) {
             var route = apis[item];
