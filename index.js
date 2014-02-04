@@ -1,5 +1,13 @@
 require('angular-resource');
 
+var defaults = {
+    actions: {
+        put: {
+            method: 'PUT'
+        }
+    }
+}
+
 exports.config = function(apis) {
     if (!angular) return false;
     if (!apis) return false;
@@ -8,12 +16,9 @@ exports.config = function(apis) {
         var router = {}
         Object.keys(apis).forEach(function(item) {
             var route = apis[item];
-            if (typeof(route) === 'string') router[item] = $resource(route, {})
-            if (typeof(route) === 'object') router[item] = $resource(
-                route.url,
-                route.params ? route.params : {},
-                route.actions ? route.actions : {}
-            )
+            router[item] = (typeof(route) === 'string') ?
+           $resource(route, {}) :
+           $resource(route.url, route.params || {}, route.actions || defaults.actions)
         })
         return router
     });
