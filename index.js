@@ -1,6 +1,7 @@
 require('angular-resource');
 
 var defaults = {
+    params: {},
     actions: {
         post: {
             method: 'POST'
@@ -20,8 +21,8 @@ exports.config = function(apis) {
         Object.keys(apis).forEach(function(item) {
             var route = apis[item];
             router[item] = (typeof(route) === 'string') ?
-           $resource(route, {}) :
-           $resource(route.url, route.params || {}, route.actions || defaults.actions)
+           $resource(route, defaults.params, defaults.actions) :
+           $resource(route.url, route.params || defaults.params, route.actions || defaults.actions)
         })
         return router
     });
