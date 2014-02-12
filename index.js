@@ -2,6 +2,9 @@ require('angular-resource');
 
 var defaults = {
     actions: {
+        post: {
+            method: 'POST'
+        }
         put: {
             method: 'PUT'
         }
