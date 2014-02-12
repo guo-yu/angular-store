@@ -3,11 +3,9 @@ require('angular-resource');
 var defaults = {
     params: {},
     actions: {
-        post: {
-            method: 'POST'
-        },
         put: {
-            method: 'PUT'
+            method: 'PUT',
+            isArray: false
         }
     }
 }
